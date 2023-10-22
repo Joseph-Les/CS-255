@@ -1,0 +1,116 @@
+DriverPass Business Document
+
+System Components and Design
+Purpose
+What is the purpose of this project? Who is the client and what do they want their system to be able to do?
+•	The client for this project is DriverPass, represented by Liam and Ian. They aim to have online platforms that offer driver education, practice tests, and the capability to schedule in-person driving lessons. Our task is to develop an interactive system compatible with both mobile and desktop devices. Liam and Ian have specified that they want the system to automatically store data in the cloud without any intervention on their part. Moreover, they should have the option to download all the information when needed. For enhanced security, they also require a variety of user and group permissions to be implemented.
+System Background
+What does DriverPass want the system to do? What is the problem they want to fix? What are the different components needed for this system?
+•	DriverPass aims for the system to be a comprehensive platform where individuals can access training materials, online classes, and practice tests for the driver’s exam. Additionally, they want users to be able to schedule in-person lessons and select from various packages tailored to their needs. DriverPass has identified a gap in the market concerning the availability of quality training material for individuals preparing for their driver’s test. They want to address this deficiency by creating a platform that offers extensive resources and convenience to its users.
+•	The system will comprise multiple components including:
+o	An online website.
+o	A robust database to store course materials, user information, and test results.
+o	User and group permissions to ensure data security and tailored access.
+o	Mobile device functionality to cater to users on-the-go.
+
+Objectives and Goals
+What should this system be able to do when it is completed? 
+
+•	Upon completion, the system should provide a seamless experience for users to access training materials, online classes, practice tests, and schedule in-person driving lessons. The website should also offer various packages and options tailored to the user's needs. It should ensure data integrity, be scalable based on demand, offer a responsive design for all devices, and have robust security mechanisms, especially for user data.
+What measurable tasks need to be included in the system design to achieve this?
+
+•	Cloud Hosting and Scalability:
+o	Host the website and its associated database on a cloud platform such as Microsoft Azure or AWS.
+o	Implement automation for the system to be elastic, ensuring it can scale based on customer demand.
+•	Database Backup and Reliability:
+o	Schedule regular snapshots of the database to ensure data integrity and quick recovery in the event of a failure.
+o	Automate these snapshots on a defined schedule, whether daily, weekly, or any other desired frequency.
+•	Website Functionalities and Interactivity:
+o	Utilize languages like React and Typescript to ensure a dynamic, single-page application experience without needing to refresh the entire page.
+o	Ensure the website design aligns with Liam's specifications.
+•	Incorporate features to:
+o	Host and stream educational videos.
+o	Manage and display available scheduling slots.
+o	Track and display individual user progress.
+o	Store essential driver data securely.
+o	Organize the website into distinct sections to ensure smooth interactivity without disruptions.
+•	User and Group Management:
+o	Leverage cloud-based user and group management tools.
+o	Enable the client to conveniently add, remove, or modify employee details.
+o	Implement group policies: Set up default groups (e.g., a 'driver' group) to streamline the user addition process and apply the necessary permissions and restrictions. This ensures users only access the information and tools relevant to their role.
+•	By addressing each of these measurable tasks in the system design, the product will meet the specified requirements and offer a user-friendly, secure, and efficient platform for DriverPass and its customers.
+
+
+
+
+
+Requirements
+Nonfunctional Requirements
+In this section, you will detail the different nonfunctional requirements for the DriverPass system. You will need to think about the different things that the system needs to function properly.
+
+Performance Requirements
+What environments (web-based, application, etc.) does this system need to run in? How fast should the system run? How often should the system be updated?
+•	The platform with be web-based supported on a cloud environment, i.e., Azure, AWS, or Oracle.
+•	The average website response time is 200 milliseconds. This gives the feeling of the website being instantly responsive, therefore we will be aiming for that goal.
+•	The system will be designed to scale, ensuring optimal performance during peak usage times, and will be monitored continuously for any performance degradation, with automatic alerts set up for any anomalies detected.
+
+Platform Constraints
+What platforms (Windows, Unix, etc.) should the system run on? Does the back end require any tools, such as a database, to support this application?
+•	The platform will be required to operate on major platforms, Windows, Linux, Apple sweet of iOS, along with mobile devices. 
+•	The system will utilize a robust and scalable database, possibly a SQL or NoSQL based, depending on the data structure and retrieval needs, ensuring data integrity and optimal performance.
+
+Accuracy and Precision
+How will you distinguish between different users? Is the input case-sensitive? When should the system inform the admin of a problem?
+•	The distinguishing of different users will be established upon authentication of the user. Having different roles and groups for users, there will be “customer”, “driver”, and “admin”.
+•	The system will implement stringent input validation to prevent any incorrect data entry and will have robust error handling to deal with any anomalies in data processing.
+Adaptability 
+Can you make changes to the user (add/remove/modify) without changing code? How will the system adapt to platform updates? What type of access does the IT admin need? 
+•	User information will only be editable by the user themselves. They will be allowed to create, edit, and delete accounts as they find fit.
+•	The system will be designed to be future proof, allowing for seamless integration of new features and updates, ensuring longevity and adaptability to evolving business needs.
+•	Admins will be establish between the head of DriverPass and our company for maintaining the website. While we maintain the code base, Liam and Sam will have permissions to disable and enable packages.
+
+Security
+What is required for the user to log in? How can you secure the connection or the data exchange between the client and the server? What should happen to the account if there is a “brute force” hacking attempt? What happens if the user forgets their password? 
+•	The system will implement advanced security protocols, including encryption for data in transit and at rest, and regular security audits will be conducted to identify and mitigate any vulnerabilities.
+•	Users are required to have username, verify email account, password 12 characters in length, mixed with letters, number, special characters and upper/lower case.
+•	During the authentication process, after five failed access attempts, accounts will be locked, and the user and admin will be notified of the issue. Recovery email with two factor authentication will be sent.
+•	If a user needs password reset, they will have an option to select an email to be sent to them to assist in resetting their password. Admins will have the power to reset password for a redundant method. 
+
+Functional Requirements
+Using the information from the scenario, think about the different functions the system needs to provide. Each of your bullets should start with “The system shall . . .” For example, one functional requirement might be, “The system shall validate user credentials when logging in.”
+•	The system shall authenticate each user and assign the correct permissions upon log in.
+•	The system shall process payments based on the package selected.
+•	The system shall provide real-time updates and notifications to users regarding their reservations and learning progress.
+•	The system shall allow administrators to generate reports and analytics to monitor user activity and system performance.
+•	The system shall enable seamless communication between drivers and customers for scheduling and feedback.
+
+
+User Interface
+What are the needs of the interface? Who are the different users for this interface? What will each user need to be able to do through the interface? How will the user interact with the interface (mobile, browser, etc.)? 
+•	There are three different users of DriverPass. The interface will be user-friendly, intuitive, and responsive, ensuring a seamless user experience across different devices and platforms for customers, drivers, and administrators.
+•	Customer: The interface will show progress in learning and driving time for the customer. It will allow them to interact with learning material, as well as select varies packaged based on their learning needs.
+•	Driver: The drivers will need an account to confirm and keep track of their driving times. 	They will set up a profile, displaying it on the customer account.
+•	Admin: The admin interface will provide advanced tools for system monitoring, user management, and data analysis, allowing for efficient system management and oversight.
+Assumptions
+What things were not specifically addressed in your design above? What assumptions are you making in your design about the users or the technology they have? 
+•	It is assumed that there is a simplicity of displaying the webpage on different devices and different UIs. It may be a lot easier said than done and this would require greater knowledge from the team as well as possibly more time to develop.
+•	The physical hardware was not an address that would be used for the website. Since this will be hosted on a cloud company, the hardware is not a concern directly to the website or customer but the cost it be of concerned.
+•	It is assumed that the cloud service providers will ensure high availability and performance of the infrastructure, and any downtime or performance issues on their end will be addressed promptly as per the service level agreement (SLA).
+•	There was no plan for a back availability zone, cost will be a factor there as well.
+•	It is assumed that users will have access to a stable internet connection to access the web-based platform, and any disruptions in connectivity are beyond the control of the system.
+
+
+Limitations
+Any system you build will naturally have limitations. What limitations do you see in your system design? What limitations do you have as far as resources, time, budget, or technology?
+•	Development time will be one limitation. Depending on the team knowledge on developing websites for mobile and desktop devices, that will vary the time needed for research.
+•	Using the cloud, we can scale up and down the number of instances needed to meet demand, helping to drive costs down. We can also set a limit of how much we want to scale up to ensure we stay on budget as well.
+•	Budget constraints may limit the extent of features and optimizations that can be implemented in the initial release, and some features may need to be prioritized over others based on business needs.
+•	There may be limitations in integrating with external systems, such as the DMV, due to constraints in their APIs or data availability, which may impact the functionality and efficiency of the system.
+
+
+Gantt Chart
+Please include a screenshot of the GANTT chart that you created with Lucidchart. Be sure to check that it meets the plan described by the characters in the interview.
+•	Please see attached excel file.
+
+
+
